@@ -6,5 +6,3 @@ let userPassword = prompt('Enter your password')
     else {
         alert('No entry!')
     }
-
-
