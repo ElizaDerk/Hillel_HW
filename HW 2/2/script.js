@@ -1,12 +1,10 @@
-
 do{
-    var userAge = prompt('Сколько Вам лет?')
-}while(isNaN(userAge) || userAge < 1 || userAge > 99);
+    var userAge = prompt('Сколько Вам лет?', '')
+}while(isNaN(userAge) || userAge < 2 || userAge > 99);
+        if (userAge % 10 >= 5 && userAge % 10 <= 9 || userAge % 10 === 0){
+            alert(`Тебе ${userAge} лет!`)
+        }
 
-fn=(n, arr) => n+" "+arr[(n%100>4 && n%100<20)?2:[2, 0, 1, 1, 1, 2][(n%10<5)?n%10:5]];
-var arr1 = ['год', 'года', 'лет'];
-
-alert('Вам ' + fn(userAge, arr1))
-
-
-
+        else{
+            alert(`Тебе ${userAge} года!`)
+        }
