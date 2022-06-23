@@ -1,40 +1,38 @@
 let place = alert('Your first place')
-    let a = prompt('Enter x', 1)
-    let b = prompt('Enter y', 1)
+let a = +prompt('Enter x')
+let b = +prompt('Enter y')
 
 if (a>=1 && a<=8 && b>=1 && b<=8) {
     alert(true);
 
     let step = alert('Please, do the step')
-        var x = prompt('Enter position for x', 1)
-        var y= prompt('Enter position for y', 1)
-    if (x>=1 && x<=8 && y>=1 && y<=8){
-        if ((a+x) && (b+y)){
-            if(x<=2 && y<=2) {
-                alert('True')
-            }
-                else if ( (a=x) && (b=y)){
-                    alert('False')
-                }
+        var stepX = +prompt('Enter position for x')
+        var stepY= +prompt('Enter position for y')
+    if (stepX>=1 && stepX<=8 && stepY>=1 && stepY<=8){
+        if ((a+2)==stepX && ((b-1)==stepY || (b+1)==stepY)) {
+            alert('True')
+        }
+        else if ((a+1)==stepX && ((b-2)==stepY || (b+2)==stepY)) {
+            alert('True')
+        }
+        else if ( (a === stepX) && (b === stepY)){
+            alert('Make a move')
+        }
+        else if ((a-2)==stepX && ((b-1)==stepY || (b+1)==stepY)) {
+            alert('True')
+        }
+        else if ((a-1)==stepX && ((b-2)==stepY || (b+2)==stepY)) {
+            alert('True')
+        }
+        else{
+            alert('false')
         }
 
-        else if ((a-x) && (b-y)) {
-            if(x<=2 && y<=2){
-                alert('True')
-            }
-        }
     }
     else {
         alert('False')
     }
 }
-    else {
+else {
     alert('False')
 }
-
-
-
-
-
-
-
