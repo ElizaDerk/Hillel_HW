@@ -8,7 +8,9 @@ let arrLength = parseInt(prompt("Количество цифр, которые �
                sum += number;
             }
             let x = sum /arrLength;
-            alert(arr.toString()+":"+ x.toString())
+            alert("Array:" + arr.toString()+". Mean:"+ x.toString())
 
         }
+
+
 
