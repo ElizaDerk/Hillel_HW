@@ -8,7 +8,7 @@ for(i=0;i<n;i++) {
 
 for(i=0;i<n;i++) {
     for (j = 0; j < m; j++) {
-        mas[i][j] = parseInt(Math.random()*10);
+        mas[i][j] = Math.floor(Math.random()*31) - 10;
     }
 }
 
@@ -25,7 +25,6 @@ function display(){
 }
 display();
 
-//сделать функцию Prime
 function unique(arr){
     let result = []
     for (let str of arr) {
