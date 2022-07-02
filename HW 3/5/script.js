@@ -23,7 +23,34 @@ function display(){
     }
 
 }
-
 display();
 
+//сделать функцию Prime
+function unique(arr){
+    let result = []
+    for (let str of arr) {
+        if (!result.includes(str)) {
+            result.push(str);
+        }
+    }
+    return result;
+}
+
+
+let devNumber = parseInt(prompt("Enter the devider, K?"))
+function devider(){
+    let tempArr =[]
+    mas.forEach( arr => {
+        console.log('-------')
+        arr.forEach(el => {
+                if( el % devNumber === 0 ){
+                    tempArr.push(el)
+                }
+            }
+        )
+    })
+    console.log(unique(tempArr))
+}
+
+devider();
 
