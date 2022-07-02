@@ -19,9 +19,28 @@ function getRandomIndex(array) {
 }
 
 
-let firstNameLetter = prompt("Please, write a letter from A to B")
-let firstSurnameLetter = prompt("Please, write a letter from A to B").toUpperCase()
+function isEmptyOrNull(value) {
+    if (value == null)
+        return true
+    else return value.trim().length === 0;
+}
+
+
+let firstNameLetter = prompt("Write a letter from A to B")
+while (isEmptyOrNull(firstNameLetter)) {
+    firstNameLetter = prompt('Please, write letter ONLY from A to B!');
+}
+
+let firstSurnameLetter = prompt("Please, write a letter for surname from A to B").toUpperCase()
+while (isEmptyOrNull(firstSurnameLetter)) {
+    firstSurnameLetter = prompt('Please, write letter for surname ONLY from A to B!');
+}
+
 let userGender = prompt("Are you male of female? Please write, male or female.", 'male')
+    if (userGender !== 'male' || userGender !=='female'){
+        alert('It is not correct!')
+    }
+
 
 firstSurnameLetter = firstSurnameLetter.toUpperCase()
 firstNameLetter = firstNameLetter.toUpperCase()
