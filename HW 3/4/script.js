@@ -1,3 +1,13 @@
+ //Shift
+ let numbers1 = [1, 2, 3, 4]
+ function shift(array) {
+    for ( let i = 0; i < array.length; i++) {
+        array[i] = array[i + 1];
+    }
+    --array.length;
+    return(array);
+}
+numbers1 = shift(numbers1)
 
 
 
@@ -10,7 +20,7 @@ function pop(arr) {
     }
     return (res);
 }
-c = pop(numbers)
+numbers = pop(numbers)
 
 
 
