@@ -37,9 +37,7 @@ while (isEmptyOrNull(firstSurnameLetter)) {
 }
 
 let userGender = prompt("Are you male of female? Please write, male or female.", 'male')
-    if (userGender !== 'male' || userGender !=='female'){
-        alert('It is not correct!')
-    }
+
 
 
 firstSurnameLetter = firstSurnameLetter.toUpperCase()
@@ -56,8 +54,9 @@ if (userGender === 'male'){
     let randomIndex = getRandomIndex(femaleNames[firstNameLetter]);
     name = femaleNames[firstNameLetter][randomIndex]
     surName = surnames[firstSurnameLetter][randomIndex]
-} else {
-    alert ("Is not correct!")
+}
+else {
+    console.log('Isnt correct!')
 }
 
 console.log(`Your name: ${name} : ${surName}`)
