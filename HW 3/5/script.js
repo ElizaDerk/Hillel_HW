@@ -13,16 +13,17 @@ for(i=0;i<n;i++) {
 }
 
 function display(){
-    console.log(mas)
     for (let i = 0; i < mas.length; i++) {
-        for (let j = 0; j < mas.length; j++) {
-            mas[i][j];
-            console.log(mas)
+        console.log('-------')
+        let stringDisplay = ''
+        for (let j = 0; j < mas[i].length; j++) {
+            stringDisplay += ` ${mas[i][j]} `
         }
-
+        console.log(stringDisplay)
     }
 
 }
 
+display();
 
 
