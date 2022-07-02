@@ -18,6 +18,7 @@ function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
 }
 
+
 let firstNameLetter = prompt("Please, write a letter from A to B")
 let firstSurnameLetter = prompt("Please, write a letter from A to B").toUpperCase()
 let userGender = prompt("Are you male of female? Please write, male or female.", 'male')
