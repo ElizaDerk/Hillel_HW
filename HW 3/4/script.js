@@ -1,5 +1,5 @@
  //Shift
- let numbers1 = [1, 2, 3, 4]
+ let number = [1, 2, 3, 4]
  function shift(array) {
     for ( let i = 0; i < array.length; i++) {
         array[i] = array[i + 1];
@@ -7,12 +7,12 @@
     --array.length;
     return(array);
 }
-numbers1 = shift(numbers1)
+number = shift(number)
 
 
 
 //Pop
-let numbers = [1, 2, 3, 4]
+let number = [1, 2, 3, 4]
 function pop(arr) {
     let res = []
     for (let i = 0; i < arr.length - 1; i++) {
@@ -20,9 +20,19 @@ function pop(arr) {
     }
     return (res);
 }
-numbers = pop(numbers)
+number = pop(number)
 
-
+ 
+ 
+//Push
+ let number = [1, 2, 3, 4]
+ function push(arr, item) {
+     return [
+         ...arr,
+         item
+     ]
+ }
+ number = push(number, 5)
 
 
 
