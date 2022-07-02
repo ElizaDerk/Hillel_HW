@@ -36,3 +36,15 @@ number = pop(number)
 
 
 
+ //Unshift
+ let number = [1, 2, 3, 4]
+function unshift(array, value) {
+    let res = []
+    for (let i = array.length; i > 0 ; i--) {
+        array[i] = array[i - 1];
+    }
+    array[0] = value;
+    return (array);
+}
+
+number = unshift (number, 8)
