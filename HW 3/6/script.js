@@ -46,16 +46,18 @@ firstNameLetter = firstNameLetter.toUpperCase()
 let name = ''
 let surName = ''
 
-if (userGender === 'male'){
-    let randomIndex = getRandomIndex(maleNames[firstNameLetter]);
-    name = maleNames[firstNameLetter][randomIndex]
-    surName = surnames[firstSurnameLetter][randomIndex]
-} else if (userGender === 'female'){
-    let randomIndex = getRandomIndex(femaleNames[firstNameLetter]);
-    name = femaleNames[firstNameLetter][randomIndex]
-    surName = surnames[firstSurnameLetter][randomIndex]
+function getFullNames(dataBaseNames, dataBaseSurnames) {
+    let randomIndex = getRandomIndex(dataBaseNames[firstNameLetter])
+    name = dataBaseNames[firstNameLetter][randomIndex]
+    surName = dataBaseSurnames[firstSurnameLetter][randomIndex]
+
 }
-else {
+
+if(userGender === 'male'){
+    getFullNames(maleNames, surnames)
+}else if (userGender === 'female'){
+    getFullNames(femaleNames, surnames)
+}else{
     console.log('Isnt correct!')
 }
 
