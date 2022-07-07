@@ -22,7 +22,19 @@
  0 => 8, 0
   */
 
- let num = prompt('Enter the Number');
+
+
+ let num = prompt("Enter the Number")
+ while (isEmptyOrNull(num)) {
+     num = prompt('Please, Enter the Number');
+ }
+
+ function isEmptyOrNull(value) {
+     if (value == null && value !== '')
+         return true
+     else return value.trim().length === 0;
+ }
+
  function getNumbers(code,index) {
 
      switch (num){
@@ -52,9 +64,9 @@
          case '9':
              return ['6','8','9'];
              break;
-         default:
+         case '0':
              return ['0','8'];
-
+             break;
      }
 
  }
