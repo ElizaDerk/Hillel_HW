@@ -1,15 +1,5 @@
  /*
 
-  назвати функцію getCodes
-
-  observedCode - строка яку побачив шпіон
-
-  function getCodes(observedCode) {
-        // робіть що можете. повертає масив з пін-кодами. пін-коди мають бути строками
-    }
-
-   всі ПІН-коди, як спостережувані, так і результати,мають бути СТРОКАМИ через потенційні нулі на початку
-
  1 => 1, 2, 4
  2 => 1, 2, 3, 5
  3 => 2, 3, 6
@@ -23,7 +13,6 @@
   */
 
 
-
  let num = prompt("Enter the Number")
  while (isEmptyOrNull(num)) {
      num = prompt('Please, Enter the Number');
@@ -35,8 +24,8 @@
      else return value.trim().length === 0;
  }
 
- function getNumbers(code,index) {
 
+ function getNumbers() {
      switch (num){
          case '1':
              return ['1','2','4'];
@@ -70,4 +59,39 @@
      }
 
  }
- getNumbers().toString()
+
+
+
+ function getCodes() {
+     let yourArr = new Array(num)
+     if (yourArr.length === 1) {
+         let arr = ''
+         for (let i = 0; i < arr.length; i++) {
+             getNumbers().add(arr[i])
+         }
+         let result = Array.from(getNumbers(num))
+         return (result)
+     }
+     else if (yourArr.length === 2) {
+         let arrayOne = ''
+         let arrayTwo = ''
+         for (let i = 0; i < arrayOne.length; i++) {
+             for (let j = 0; j < arrayTwo.length; j++) {
+                 let arrayOneTwo = arrayOne[i] + arrayTwo[j]
+                 getNumbers().add(arrayOneTwo)
+             }
+         }
+         let result = Array.from(getNumbers(num))
+         return (result)
+     }
+ }
+
+ console.log(getCodes())
+
+
+
+
+
+     
+
+
