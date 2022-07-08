@@ -64,7 +64,7 @@
 
  function getCodes() {
      let yourArr = new Array(num)
-     if (yourArr.length === 1) {
+     if (num.length === 1) {
          let arr = ''
          for (let i = 0; i < arr.length; i++) {
              getNumbers().add(arr[i])
@@ -72,7 +72,7 @@
          let result = Array.from(getNumbers(num))
          return (result)
      }
-     else if (yourArr.length === 2) {
+     else if (num.length === 2) {
          let arrayOne = ''
          let arrayTwo = ''
          for (let i = 0; i < arrayOne.length; i++) {
