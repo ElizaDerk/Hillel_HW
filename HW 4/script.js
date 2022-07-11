@@ -1,5 +1,4 @@
  /*
-
  1 => 1, 2, 4
  2 => 1, 2, 3, 5
  3 => 2, 3, 6
@@ -14,6 +13,7 @@
 
 
  let num = prompt("Enter the Number")
+
  while (isEmptyOrNull(num)) {
      num = prompt('Please, Enter the Number');
  }
@@ -25,73 +25,62 @@
  }
 
 
- function getNumbers() {
-     switch (num){
+ function getNumbers(possibleCode) {
+     let result = [];
+     switch (possibleCode){
          case '1':
-             return ['1','2','4'];
+             result =  ['1','2','4'];
              break;
          case '2':
-             return ['1','2','3','5'];
+             result = ['1','2','3','5'];
              break;
          case '3':
-             return ['2','3','6'];
+             result = ['2','3','6'];
              break;
          case '4':
-             return ['1','4','5','7'];
+             result = ['1','4','5','7'];
              break;
          case '5':
-             return ['2','4','5','6','8'];
+             result = ['2','4','5','6','8'];
              break;
          case '6':
-             return ['3','5','6','9'];
+             result = ['3','5','6','9'];
              break;
          case '7':
-             return ['4','7','8'];
+             result = ['4','7','8'];
+             break
          case '8':
-             return ['5','7','8','9','0'];
+             result = ['5','7','8','9','0'];
              break;
          case '9':
-             return ['6','8','9'];
+             result = ['6','8','9'];
              break;
          case '0':
-             return ['0','8'];
+             result = ['0','8'];
              break;
      }
 
+     return result;
+
  }
 
+ let arr = num.split('')
+ let resultArr1 = getNumbers(arr[0])
+ let resultArr2 = getNumbers(arr[1])
+ let resultArr3 = getNumbers(arr[2])
+ let resultArr4 = getNumbers(arr[3])
+ let result = []
 
-
- function getCodes() {
-     let yourArr = new Array(num)
-     if (num.length === 1) {
-         let arr = ''
-         for (let i = 0; i < arr.length; i++) {
-             getNumbers().add(arr[i])
-         }
-         let result = Array.from(getNumbers(num))
-         return (result)
-     }
-     else if (num.length === 2) {
-         let arrayOne = ''
-         let arrayTwo = ''
-         for (let i = 0; i < arrayOne.length; i++) {
-             for (let j = 0; j < arrayTwo.length; j++) {
-                 let arrayOneTwo = arrayOne[i] + arrayTwo[j]
-                 getNumbers().add(arrayOneTwo)
+     for (let i = 0; i < resultArr1.length; i++) {
+         for (let j = 0; j < resultArr2.length; j++) {
+             for (let k = 0; k < resultArr3.length; k++) {
+                 for (let n = 0; n < resultArr4.length; n++) {
+                     let possibleCode = resultArr1[i] + resultArr2[j] + resultArr3[k] + resultArr4[n]
+                     result.push(possibleCode)
+                 }
              }
          }
-         let result = Array.from(getNumbers(num))
-         return (result)
      }
- }
-
- console.log(getCodes())
 
 
-
-
-
-     
-
-
+console.log(`RESULT: ${result}`)
