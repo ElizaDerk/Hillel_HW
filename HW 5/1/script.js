@@ -1,11 +1,15 @@
-// let arr = [1, 8, 37, 5, 17];
-let arr = [8, 17];
-function max(arr) {
-    if (arr.length === 1){
-        return arr[0]
-    }else{
-        return Math.max(arr[arr.length-1]);
-        max(arr)(arr, arr.length-1)
+let arr = [1, 8, 37, 5, 17];
+// let arr = [8, 17];
+// let arr = [8];
+
+let max = arr[0];
+function getMax(arr, index) {
+    if(index === arr.length){
+        return max
     }
+
+    max = arr[index] > max ? arr[index] : max;
+    index++;
+    return getMax(arr, index)
 }
-console.log(max(arr))
+console.log(getMax(arr, 0))
