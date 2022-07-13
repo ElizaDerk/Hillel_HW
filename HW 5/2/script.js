@@ -9,3 +9,4 @@ function pow(n,m){
     return result;
 }
 console.log(pow(n,m))
+
