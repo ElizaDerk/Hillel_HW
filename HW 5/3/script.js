@@ -1,17 +1,16 @@
 
-
-
 function myFunk(number){
-    let firstNum = 3;
+    let firstNum = 0;
 
-    return function Funk(number){
-        let secondNum = parseInt(prompt("Enter the number"));
-        return (firstNum + secondNum);
+    return function(num){
+       return (firstNum += num);
     }
 }
 
-let num = myFunk()
-
-console.log(num(myFunk()));
+let result = myFunk();
+console.log(result(3))
+console.log(result(5))
+console.log(result(20))
+console.log(result(30))
 
 
