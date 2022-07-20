@@ -1,0 +1,640 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+}
+
+header {
+    max-width: 1231px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 35px;
+    align-items: center;
+}
+
+.menuItem {
+    display: block;
+    margin: 2rem 4rem;
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+}
+
+.menuItem:hover {
+    text-decoration: underline;
+}
+
+.hamburger {
+    border: none;
+    position: relative;
+    padding: 6px 0;
+    width: 23px;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.hamburger::before{
+    content: '';
+    background-color: #737373;
+    position: absolute;
+    height: 2px;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+.hamburger::after{
+    content: '';
+    background-color: #737373;
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+}
+
+.burger{
+    background-color: #737373;
+    height: 2px;
+    width: 100%;
+    display: block;
+}
+
+
+.menu {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+    background: black;
+    color: white;
+    list-style: none;
+    padding-top: 4rem;
+}
+
+.showMenu {
+    transform: translateY(0);
+}
+
+
+/*First Container*/
+.block{
+    max-width: 1231px;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px;
+}
+
+.first-container{
+    background:url("/IMG/vcvv-min.jpg");
+    height: calc(100vh - 80px);
+}
+
+.title{
+    max-width: 769px;
+    font-size: 72px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.navigation{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.item{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.item:not(:first-child):after{
+    content: '';
+    display: block;
+    width: 2px;
+    height: 20px;
+    background: #fff;
+    margin-left: -10px;
+    transform: translateY(-20px);
+}
+
+.btn{
+    padding: 15px 80px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    margin-bottom: 122px;
+}
+
+.btn:hover{
+    background: white;
+    border: 2px solid gray;
+    color: black;
+    cursor: pointer;
+}
+
+/*Second container*/
+.second-container{
+    max-width: 1231px;
+    margin: 0 auto;
+    background: white;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 30px 35px;
+    padding-bottom: 195px;
+}
+
+.circle-blue{
+    background: #3a4998;
+    width: 228px;
+    height: 228px;
+    border-radius: 50%;
+}
+
+.second-container h2{
+    font-size: 60px;
+    font-weight: 400;
+    text-align: end;
+}
+
+.span-title{
+    font-weight: 700;
+}
+
+.fst-block{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.img-boys{
+    border-radius: 50%;
+    position: relative;
+
+}
+
+.gamepad{
+    border-radius: 50%;
+    border: 15px solid white;
+    left: 0;
+    transform: translate(95px, 390px);
+    position: absolute;
+
+}
+
+.snd-block{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.text-block{
+    max-width: 447px;
+}
+
+.text{
+    padding: 40px;
+    background: #f2f2f2;
+}
+
+.text h3{
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.text p{
+    font-weight: 200;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.btn-text-block{
+    background: #3a4998;
+    padding: 15px 35px;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: none;
+    color: white;
+}
+
+.btn-text-block:hover{
+    background: #292a33;
+}
+
+.circle-orange{
+    width: 147px;
+    height: 147px;
+    border: 30px solid #e5bb8d;
+    border-radius: 50%;
+    position: absolute;
+    left: 35%;
+    transform: translateY(41px);
+}
+
+
+/*Third container*/
+.third-container{
+    background:url("/IMG/fffffff-min.jpg");
+    height: calc(110vh - 80px);
+    min-height: 788px;
+}
+
+.container-block{
+    font-family: 'Ubuntu', sans-serif;
+    color: #000;
+    max-width: 1231px;
+    margin: 0 auto;
+}
+
+.block-items{
+    display: flex;
+    flex-direction: column;
+    max-width: 635px;
+    float: right;
+    margin-top: 57px;
+}
+
+.container-item{
+    background: white;
+    margin-bottom: 25px;
+    padding: 30px;
+}
+
+.container-item h3{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.container-item p{
+    font-weight: 300;
+    font-size: 20px;
+}
+
+/* Forth container */
+.forth-container{
+    background: #f5f7fa;
+}
+
+.gray-block{
+    font-family: 'Ubuntu', sans-serif;
+    color: #000;
+    max-width: 1231px;
+    margin: 0 auto;
+    padding-top: 65px;
+    max-height: 1026px;
+}
+
+.forth-img{
+    display: flex;
+    justify-content: center;
+}
+
+.blue-block{
+    background: #3a4998;
+    width: 100%;
+    height: 463px;
+    margin-top: -290px;
+}
+
+/* Slides */
+.slider{
+    max-width: 474px;
+    background: white;
+    transform: translate(20%, -75%);
+}
+
+.slideshow-container {
+    position: relative;
+}
+
+.mySlides {
+    display: none;
+    padding: 50px;
+    padding-bottom: 0;
+}
+
+.mySlides h3{
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.mySlides p{
+   font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 10px;
+    color: #000000;
+    user-select: none;
+    background: #e5e5e5;
+}
+
+.next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background: #d9d9d9;
+    color: white;
+}
+
+.dot-container {
+    text-align: center;
+    padding: 15px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fifth container */
+.fifth-bg{
+    background:url("/IMG/pexels.jpeg") center;
+    height: calc(110vh - 80px);
+    min-height: 674px;
+}
+
+.fifth-container{
+    font-family: 'Ubuntu', sans-serif;
+    color: #000;
+    max-width: 1231px;
+    margin: 0 auto;
+}
+
+.fifth-container h2{
+    max-width: 423px;
+    font-size: 72px;
+    font-weight: 700;
+    padding-top: 91px;
+    margin-bottom: 29px;
+}
+
+/* Sixth */
+.sixth-bg{
+    background: #f5f7fa;
+}
+
+.sixth-container{
+    font-family: 'Ubuntu', sans-serif;
+    color: #000;
+    max-width: 1231px;
+    margin: 0 auto;
+    max-height: 1044px;
+}
+
+.text-wrapper{
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 65px;
+}
+
+.text-wrapper h3{
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.text-wrapper p{
+   font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 52px;
+}
+
+.first-img{
+    display: flex;
+    justify-content: space-between;
+}
+
+.woman-img{
+    border-radius: 50%;
+}
+
+.second-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-5%, -35%);
+}
+
+.boy-img{
+    border-radius: 50%;
+}
+
+.little-circle{
+    background: #3a4998;
+    width: 228px;
+    height: 228px;
+    border-radius: 50%;
+    transform: translateX(-60px);
+}
+
+.second-circle{
+    width: 147px;
+    height: 147px;
+    border: 30px solid #e5bb8d;
+    border-radius: 50%;
+    transform: translateY(100%);
+}
+
+/* Seven container */
+.seventh-bg{
+    background: #332e29;
+}
+
+.seventh-container{
+    font-family: 'Ubuntu', sans-serif;
+    color: #000;
+    max-width: 1231px;
+    margin: 0 auto;
+}
+
+.seventh-block{
+    padding: 50px 35px;
+}
+
+.text-item{
+    max-width: 472px;
+    background: white;
+    padding: 40px 25px;
+    position: relative;
+}
+
+.text-item h3{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.text-item p{
+    font-weight: 200;
+    font-size: 20px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+.btn-text{
+    background: transparent;
+    padding: 10px 35px;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: 1px solid black;
+    color: black;
+}
+
+.btn-text:hover{
+    background: black;
+    color: white;
+}
+
+.right-img{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -155px;
+}
+
+/*Form sector*/
+.form-bg{
+    background: #f5f7fa;
+}
+
+.form-container{
+    font-family: 'Ubuntu', sans-serif;
+    color: #000;
+    max-width: 1231px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.form-container h3, p{
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: lowercase;
+    margin: 32px 0;
+}
+
+.form-block{
+    padding: 20px;
+}
+
+#email, #fname{
+    margin-bottom: 15px;
+    display: block;
+    width: 422px;
+    padding: 5px 10px;
+    font-size: 10px;
+    border: none;
+    background: #dddcdb;
+}
+
+.form textarea{
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    font-size: 10px;
+    width: 422px;
+    font-family: 'Ubuntu', sans-serif;
+    resize: none;
+    border: none;
+    background: #dddcdb;
+}
+
+.submit{
+    font-size: 16px;
+    border-radius: 25px;
+    display: block;
+    padding: 15px 35px;
+    border: 1px solid black;
+    background: transparent;
+}
+
+.contact{
+    display: flex;
+    margin-bottom: 50px;
+}
+.icon{
+    width: 32px;
+}
+
+.icon-link{
+    margin-right: 20px;
+}
+
+.bg{
+    background: #332e29;
+}
+
+.footer-block{
+    font-family: 'Ubuntu', sans-serif;
+    color: #000;
+    max-width: 1231px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-block p{
+    font-size: 15px;
+    font-weight: 100;
+    max-width: 417px;
+    text-align: center;
+    color: white;
+}
+
