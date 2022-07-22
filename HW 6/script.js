@@ -51,23 +51,9 @@ function showSlides(n) {
 }
 
 //Form
-const userInput = document.getElementById("input");
-const clear = document.querySelector('.clear');
 
-function remove(){
-    let el = document.querySelectorAll('.active');
-    el.forEach(el => el.classList.remove('active'));
-    userInput.value = '';
-    removeBorder();
-}
-
-function removeBorder() {
-    for (let element of clear) {
-        element.classList.remove("active");
-    }
-}
-
-clear.addEventListener('click', remove)
-
-
-
+const btn = document.querySelector('.clear')
+btn.addEventListener('click', function handleClick(event) {
+    const element = document.getElementById('input');
+    element.value = '';
+});
