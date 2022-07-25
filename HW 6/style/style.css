@@ -694,3 +694,6 @@ header {
     color: white;
 }
 
+.active{
+    outline: 3px solid red;
+}
