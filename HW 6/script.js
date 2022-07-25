@@ -55,7 +55,6 @@ function showSlides(n) {
 let all = document.querySelectorAll('*')
 const yourInput = document.querySelector('.input')
 const btn = document.querySelector('.clear');
-const allBtns = document.querySelectorAll('.btns')
 const previous = document.querySelector('#previous-btn');
 const next = document.querySelector('#next-btn')
 const parent = document.querySelector('#parent-btn')
@@ -63,7 +62,7 @@ const firstChild = document.querySelector('#first-child-btn')
 const lastChild = document.querySelector('#last-child-btn')
 
 function disableBtn() {
-    previous.setAttribute("disabled", "");
+    previous.setAttribute("disabled", "")
     next.setAttribute("disabled", "");
     parent.setAttribute("disabled", "");
     firstChild.setAttribute("disabled", "");
@@ -79,6 +78,12 @@ btn.addEventListener('click', function handleClick(event) {
     removeBorder();
 });
 
+function removeBorder() {
+    for (let element of all) {
+        element.classList.remove('active');
+    }
+}
+
 document.getElementById('input').addEventListener('input', function() {
     let selector = this.value;
     selectorChecker(selector)
@@ -87,19 +92,44 @@ document.getElementById('input').addEventListener('input', function() {
 
 function selectorChecker(selector) {
     let elementsList = all;
+    checkBtn()
     for (let element of elementsList) {
         if (element.tagName === selector.toUpperCase()) {
-            element.style.border = "2px solid green"
-        } else {
-            element.style.border = null
+            element.classList.add('active')
         }
     }
+
 }
+
+function checkBtn(){
+    if(previous.previousSibling === true){
+        previous.removeAttribute('disabled')
+    }
+    else if(next.nextSibling === true){
+        next.removeAttribute('disabled')
+    }
+    else if(parent.parentElement === true){
+        parent.removeAttribute('disabled')
+    }
+    else if(firstChild.firstElementChild === true){
+        firstChild.removeAttribute('disabled')
+    }
+    else if(lastChild.lastElementChild === true){
+        lastChild.removeAttribute('disabled')
+    }
+}
+
+previous.onclick = function (){
+
+}
+
     // let allP = document.getElementsByTagName(`${selector}`)
     // console.log(allP)
     // for (let el of allP){
     //     el.style.border = "2px solid green"
     // }
+
+
     // if (selector.parentNode) {
     //     parent.classList.remove('disabled');
     //     parent.classList.add('active')
@@ -108,11 +138,7 @@ function selectorChecker(selector) {
 
 
 
-function removeBorder() {
-    for (let element of all) {
-        element.classList.remove('active');
-    }
-}
+
 
 
 
