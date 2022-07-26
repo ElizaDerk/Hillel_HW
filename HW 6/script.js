@@ -88,40 +88,38 @@ document.getElementById('input').addEventListener('input', function() {
     let selector = this.value;
     selectorChecker(selector)
     console.log(selector)
+
 });
 
 function selectorChecker(selector) {
     let elementsList = all;
-    checkBtn()
     for (let element of elementsList) {
         if (element.tagName === selector.toUpperCase()) {
             element.classList.add('active')
         }
     }
-
+    checkBtn()
 }
+
 
 function checkBtn(){
-    if(previous.previousSibling === true){
-        previous.removeAttribute('disabled')
+    if(selector.previousSibling){
+        previous.disabled = false;
     }
-    else if(next.nextSibling === true){
-        next.removeAttribute('disabled')
+    else if(selector.nextSibling){
+        next.disabled = false;
     }
-    else if(parent.parentElement === true){
-        parent.removeAttribute('disabled')
+    else if(selector.parentElement){
+        parent.disabled = false;
     }
-    else if(firstChild.firstElementChild === true){
-        firstChild.removeAttribute('disabled')
+    else if(selector.firstElementChild){
+        firstChild.disabled = false;
     }
-    else if(lastChild.lastElementChild === true){
-        lastChild.removeAttribute('disabled')
+    else if(selector.lastElementChild){
+        lastChild.disabled = false;
     }
 }
 
-previous.onclick = function (){
-
-}
 
     // let allP = document.getElementsByTagName(`${selector}`)
     // console.log(allP)
