@@ -52,8 +52,8 @@ function showSlides(n) {
 
 //Form
 
+const input = document.querySelector('input')
 let all = document.querySelectorAll('*')
-const yourInput = document.querySelector('.input')
 const btn = document.querySelector('.clear');
 const previous = document.querySelector('#previous-btn');
 const next = document.querySelector('#next-btn')
@@ -68,15 +68,7 @@ function disableBtn() {
     firstChild.setAttribute("disabled", "");
     lastChild.setAttribute("disabled", "");
 }
-
 disableBtn();
-
-
-btn.addEventListener('click', function handleClick(event) {
-    const element = document.querySelector('input');
-    element.value = '';
-    removeBorder();
-});
 
 function removeBorder() {
     for (let element of all) {
@@ -84,55 +76,44 @@ function removeBorder() {
     }
 }
 
-document.getElementById('input').addEventListener('input', function() {
-    let selector = this.value;
-    selectorChecker(selector)
-    console.log(selector)
-
-});
-
 function selectorChecker(selector) {
-    let elementsList = all;
-    for (let element of elementsList) {
+    for (let element of all) {
         if (element.tagName === selector.toUpperCase()) {
             element.classList.add('active')
         }
     }
-    checkBtn()
+    checkBtn(selector)
 }
 
-
-function checkBtn(){
+function checkBtn(selector){
+    console.log(selector)
     if(selector.previousSibling){
         previous.disabled = false;
     }
-    else if(selector.nextSibling){
+    if(selector.nextSibling){
         next.disabled = false;
     }
-    else if(selector.parentElement){
+    if(selector.parentElement){
         parent.disabled = false;
     }
-    else if(selector.firstElementChild){
+    if(selector.firstElementChild){
         firstChild.disabled = false;
     }
-    else if(selector.lastElementChild){
+    if(selector.lastElementChild){
         lastChild.disabled = false;
     }
+
 }
 
+input.addEventListener('input', function() {
+    let selector = this.value;
+    selectorChecker(selector)
+});
 
-    // let allP = document.getElementsByTagName(`${selector}`)
-    // console.log(allP)
-    // for (let el of allP){
-    //     el.style.border = "2px solid green"
-    // }
-
-
-    // if (selector.parentNode) {
-    //     parent.classList.remove('disabled');
-    //     parent.classList.add('active')
-    // }
-    // console.log("el:")
+btn.addEventListener('click', function handleClick(event) {
+    input.value = '';
+    removeBorder();
+});
 
 
 
