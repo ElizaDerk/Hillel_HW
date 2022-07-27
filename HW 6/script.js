@@ -50,6 +50,7 @@ function showSlides(n) {
     dots[slideIndex-1].className += " active";
 }
 
+
 //Form
 
 const input = document.querySelector('input')
@@ -71,30 +72,27 @@ function disableBtn() {
 
 
 function removeBorder() {
-    for (let element of all) {
-        element.classList.remove('active');
+    const activeEl = document.getElementsByClassName('active');
+    for (const key in activeEl) {
+        if (Object.hasOwnProperty.call(activeEl, key)){
+            const el = activeEl[key]
+            el.classList.remove('active')
+        }
     }
 }
 
 function selectorChecker(selector) {
-    checkBtn()
+    removeBorder()
     for (let element of all) {
         if (element.tagName === selector.toUpperCase()) {
             element.classList.add('active')
         }
     }
-
+    checkBtn()
 }
 
 function checkBtn(){
     let selector = document.querySelector(input.value);
-    // console.log(selector)
-    // console.log(selector.previousElementSibling)
-    // console.log(selector.nextElementSibling)
-    // console.log(selector.parentElement)
-    // console.log(selector.firstElementChild)
-    // console.log(selector.lastElementChild)
-
     if(selector.previousElementSibling) {
         previous.disabled = false;
     }
@@ -114,7 +112,6 @@ function checkBtn(){
 }
 
 
-
 input.addEventListener('input', function() {
     let selector = this.value;
     selectorChecker(selector)
@@ -126,59 +123,62 @@ btn.addEventListener('click', function handleClick(event) {
     removeBorder();
 });
 
+
+
 previous.addEventListener('click', function (){
-
-    let selector = document.querySelector('.active');
-    removeBorder();
-
-    selector.removeAttribute('active')
-    selector.previousElementSibling.classList.add('active')
-
-    checkBtn(selector.previousElementSibling);
+    checkBtn()
+    let selector = document.querySelector(input.value);
+    if(selector.previousElementSibling === null){
+        return
+    }
+    removeBorder()
+    selector = selector.previousElementSibling;
+    selector.classList.add('active')
 })
 
 next.addEventListener('click', function (){
-
-    let selector = document.querySelector('.active');
-    removeBorder();
-
-    selector.removeAttribute('active');
-    selector.nextElementSibling.classList.add('active')
-
-    checkBtn(selector.nextElementSibling);
+    checkBtn()
+    let selector = document.querySelector(input.value);
+    if(selector.nextElementSibling === null){
+        return
+    }
+    removeBorder()
+    selector = selector.nextElementSibling;
+    selector.classList.add('active')
 })
 
 parent.addEventListener('click', function (){
+    checkBtn()
+    let selector = document.querySelector(input.value);
+        if(selector.parentElement === null){
+            return
+        }
+        removeBorder()
+        selector = selector.parentElement;
+        selector.classList.add('active')
 
-    let selector = document.querySelector('.active');
-    removeBorder();
-
-    selector.removeAttribute('active');
-    selector.parentElement.classList.add('active')
-
-    checkBtn(selector.parentElement);
 })
 
 firstChild.addEventListener('click', function (){
-
-    let selector = document.querySelector('.active');
-    removeBorder();
-
-    selector.removeAttribute('active');
-    selector.firstElementChild.classList.add('active')
-
-    checkBtn(selector.firstElementChild);
+    checkBtn()
+    let selector = document.querySelector(input.value);
+    if(selector.firstElementChild === null){
+        return
+    }
+    removeBorder()
+    selector = selector.firstElementChild;
+    selector.classList.add('active')
 })
 
 lastChild.addEventListener('click', function (){
-
-    let selector = document.querySelector('.active');
-    removeBorder();
-
-    selector.removeAttribute('active');
-    selector.lastElementChild.classList.add('active')
-
-    checkBtn(selector.lastElementChild);
+    checkBtn()
+    let selector = document.querySelector(input.value);
+    if(selector.lastElementChild === null){
+        return
+    }
+    removeBorder()
+    selector = selector.lastElementChild
+    selector.classList.add('active')
 })
 
 
